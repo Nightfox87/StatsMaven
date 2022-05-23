@@ -47,14 +47,9 @@ public class StatsService {
 
     public int lessAverageMonthCount(int[] sales) {
         int count = 0;
-        int averageSale = 0;
-        for (int sale : sales) {
-            averageSale += sale;
-        }
-        averageSale = averageSale / sales.length;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageSale) {
+            if (sales[i] < averageSales(sales)) {
                 count++;
             }
         }
@@ -64,14 +59,9 @@ public class StatsService {
 
     public int overAverageMonthCount(int[] sales) {
         int count = 0;
-        int averageSale = 0;
-        for (int sale : sales) {
-            averageSale += sale;
-        }
-        averageSale = averageSale / sales.length;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > averageSale) {
+            if (sales[i] > averageSales(sales)) {
                 count++;
             }
         }
